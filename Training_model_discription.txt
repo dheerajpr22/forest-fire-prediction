@@ -1,0 +1,33 @@
+Training_model
+
+Data Exploration:
+
+The code begins by importing necessary libraries and reading a CSV file ("corrected_data.csv") into a Pandas DataFrame named df.
+It explores the dataset by displaying its basic information (df.info()), summary statistics (df.describe()), skewness (df.skew()), shape (df.shape), null values (df.isnull().sum()), and duplicated rows (df.duplicated().sum()).
+It visualizes the correlation matrix using a heatmap with seaborn.
+Outlier Removal:
+
+The code defines a function remove_outlier to remove outliers using the interquartile range (IQR) method. However, there are issues in the implementation; the variable numerical is not defined, and the order of statements inside the function is incorrect.
+Data Splitting:
+
+The code splits the data into features (x) and the target variable (y).
+It further splits the data into training and testing sets using train_test_split.
+Random Forest Model Training:
+
+It creates a Random Forest classifier with 100 trees and fits it to the training data.
+It scales the data using StandardScaler.
+Model Evaluation:
+
+The code predicts the target variable on the test set and evaluates the model using accuracy, classification report, and confusion matrix.
+Model Saving and Loading:
+
+The trained Random Forest model is saved to a file using joblib (joblib.dump).
+The saved model is loaded back using joblib.load.
+Prediction on New Data:
+
+A new dataset (1500csv.csv) is loaded for prediction.
+The features of the new data are scaled using the same scaler used for the training set.
+The trained model is used to predict the target variable on the new data.
+Result Visualization and Export:
+
+The predictions are combined with the new data into a DataFrame, and the resulting DataFrame is saved to a new CSV file (New_predicted_f1500.csv).
